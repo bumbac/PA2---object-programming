@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="sem"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sutymate/Progtest/PA2/sem/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sutymate/Progtest/PA2/sem/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sem">
+				<Option output="/home/sutymate/Progtest/PA2/sem/cmake-build-debug/sem" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sutymate/Progtest/PA2/sem/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 sem"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sem/fast">
+				<Option output="/home/sutymate/Progtest/PA2/sem/cmake-build-debug/sem" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sutymate/Progtest/PA2/sem/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 sem/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sutymate/Progtest/PA2/sem/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/sutymate/Progtest/PA2/sem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CApplication.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CApplication.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CGame.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CGame.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CMap.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CMap.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CPath.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTile.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTile.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTower.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTower.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerArcher.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerArcher.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUpgrade.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/ETarget.h">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/main.cpp">
+			<Option target="sem"/>
+		</Unit>
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

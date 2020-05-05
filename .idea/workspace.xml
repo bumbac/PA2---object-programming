@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="sem" targetName="sem" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af0b4ed3-a15d-4f51-bd33-fd1b15e07a2a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+    <option name="clangWarnings" value="-Wno-unused-variable,-Werror=implicit-function-declaration,-Wshadow,-Wno-shadow-field-in-constructor-modified,-Wno-shadow-ivar,-Wno--Wdangling-else" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1bAH6FsSpUO23ftJ7NtLgxLZJ10" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="sem" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sem" TARGET_NAME="sem" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sem" RUN_TARGET_NAME="sem">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af0b4ed3-a15d-4f51-bd33-fd1b15e07a2a" name="Default Changelist" comment="" />
+      <created>1588067800202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588067800202</updated>
+      <workItem from="1588067802470" duration="23302000" />
+      <workItem from="1588170916127" duration="33626000" />
+      <workItem from="1588575938522" duration="18842000" />
+      <workItem from="1588663211177" duration="18770000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588155272025">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588155272025" />
+    <state x="677" y="358" width="555" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588082532566">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="677" y="358" width="555" height="398" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588082532566" />
+    <state x="767" y="272" width="469" height="629" key="#com.intellij.ide.util.MemberChooser" timestamp="1588675588932">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="767" y="272" width="469" height="629" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588675588932" />
+    <state x="767" y="272" width="469" height="604" key="#com.intellij.ide.util.MemberChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588602731854" />
+    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588669249334">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588669249334" />
+    <state x="524" y="300" width="1022" height="737" key="SettingsEditor" timestamp="1588341122289">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="524" y="300" width="1022" height="737" key="SettingsEditor/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588341122289" />
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1588669790490">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588669790490" />
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588581989192" />
+    <state x="624" y="252" key="run.anything.popup" timestamp="1588587314360">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="624" y="252" key="run.anything.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587314360" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1588587893243">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587893243" />
+  </component>
+</project>
