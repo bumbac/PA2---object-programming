@@ -22,12 +22,10 @@ std::shared_ptr<CUnit> CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUn
         else
             y_range = std::max(unit_coordinates.y - position.y, y_range);
         if (std::max(x_range, y_range) <= range) {
-            if (std::rand() % 10) {
-                if (unit.second->receiveAttack(SIZE_MAX)) {
-                    printf("MMMMMMMMMONSTER KILL!!!!\n");
-                    units.erase(unit.first);
-                    return unit.second;
-                }
+            if (std::rand() % 10 == 0) {
+                printf("MMMMMMMMMONSTER KILL!!!!\n");
+                units.erase(unit.first);
+                return unit.second;
             }
             else{
                 if (unit.second->receiveAttack(damage)) {

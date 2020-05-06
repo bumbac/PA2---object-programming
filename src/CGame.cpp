@@ -14,6 +14,7 @@ void CGame::start(void) {
             if (userAction())
                 break;
         }
+        map->printMap();
     }
     t.join();
 }
@@ -22,12 +23,11 @@ bool CGame::sequence(void) {
     if (map->moveUnits())
         return true;
     map->attackTowers();
-    map->printMap();
     return false;
 
 }
 
-int CGame::listen() {
+void CGame::listen() {
     std::string command;
     while(true) {
         std::cin >> command >> std::ws;
@@ -68,8 +68,10 @@ int CGame::listen() {
 bool CGame::userAction() {
     std::string & command = userCommands.front();
     userCommands.pop_front();
-    if (command == "exit")
+    if (command == "exit") {
+        saveGame();
         return true;
+    }
     if (command == "manual")
         showManual();
     if (command == "shop")
@@ -81,10 +83,12 @@ bool CGame::userAction() {
 }
 
 void CGame::showShop() const {
+    saveGame();
     printf("shop\nshop\nshop\n");
 }
 
 void CGame::showManual() const {
+    saveGame();
     printf("man\nman\nman\n");
 }
 

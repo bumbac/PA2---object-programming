@@ -7,7 +7,10 @@
 
 
 #include "CTower.h"
-
+/**
+ * Subclass of CTower.
+ * Attacks enemy closest to finish.
+ */
 class CTowerArcher: public CTower {
 public:
     CTowerArcher(const CTowerArcher * original, size_t & x, size_t & y, const std::shared_ptr<CTile> & goal);

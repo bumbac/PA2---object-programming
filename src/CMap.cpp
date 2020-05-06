@@ -3,14 +3,13 @@
 //
 
 #include <iostream>
-#include <fstream>
 #include "CMap.h"
 
 bool CMap::moveUnits(void) {
     for (auto & unit:units){
         size_t position = unit.first;
         if (unit.second->moveUnit(path, position)){
-            TCoordinate old_position = unit.second->getPosition();
+            TCoordinate old_position(unit.second->getPosition().x, unit.second->getPosition().y);
             std::shared_ptr<CTile> blank = std::make_shared<CTile>((unit.second.get()));
             if (position == path.size()){
                 data.m_units_escaped++;
@@ -29,7 +28,7 @@ bool CMap::moveUnits(void) {
             }
         }
     }
-    return data.m_units_escaped >= win;
+    return data.m_units_escaped >= data.m_limit;
 }
 
 void CMap::attackTowers(void) {
@@ -62,7 +61,7 @@ void CMap::placeTower(std::string & command) {
         price += *it++;
     size_t x_pos = std::stoul(x);
     size_t y_pos = std::stoul(y);
-    CTower & tower = all_towers[what];
+    auto tower = all_towers[what];
     size_t price_number = std::stoull(price);
 
     if (price_number > data.m_money) {
@@ -76,10 +75,10 @@ void CMap::placeTower(std::string & command) {
     }
 
     if (tiles[x_pos][y_pos]->canStep() ){
-        std::shared_ptr<CTower> tmp  = tower.clone(x_pos, y_pos, end);
+        std::shared_ptr<CTower> tmp  = tower->clone(x_pos, y_pos, finish);
         tiles[x_pos][y_pos] = tmp;
         towers.push_back(tmp);
-        data.m_money -= tower.getPrice();
+        data.m_money -= tower->getPrice();
     }
     else
         printf("Can't place %s here.\n",what.data());
@@ -88,7 +87,7 @@ void CMap::placeTower(std::string & command) {
 bool CMap::validUserAction(std::string & command) const {
     std::string first;
     std::cin >> first >> std::ws;
-    if (all_towers.find(first) != all_towers.end() ){
+    if (all_towers.find(first) != all_towers.end()){
         std::string number;
         size_t x;
         size_t y;
@@ -123,7 +122,7 @@ bool CMap::validUserAction(std::string & command) const {
             return false;
         }
         else{
-            command += " " + std::to_string(x) + " " + std::to_string(y) + " " + std::to_string(all_towers.find(first)->second.getPrice());
+            command += " " + std::to_string(x) + " " + std::to_string(y) + " " + std::to_string(all_towers.find(first)->second->getPrice());
             return true;
         }
     }
@@ -167,11 +166,3 @@ std::ostream &operator<<(std::ostream &os, const CMap &map) {
     }
     return os;
 }
-
-CMap::CMap(const std::string & name, bool is_new_game) {
-
-}
-
-}
-
-

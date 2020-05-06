@@ -6,7 +6,7 @@
 
 std::shared_ptr<CUnit> CTowerBombarda::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
     std::pair<size_t, std::shared_ptr<CUnit>> favorit(0, nullptr);
-    size_t min_heuristic = SIZE_MAX;
+    size_t min_hp = SIZE_MAX;
     for (auto & unit: units){
         TCoordinate unit_coordinates = unit.second->getPosition();
         size_t x_range = 0;
@@ -21,8 +21,8 @@ std::shared_ptr<CUnit> CTowerBombarda::attack(std::map<size_t, std::shared_ptr<C
         else
             y_range = std::max(unit_coordinates.y - position.y, y_range);
         if (std::max(x_range, y_range) <= range) {
-            if (unit.second->getHeuristic() < min_heuristic) {
-                min_heuristic = unit.second->getHeuristic();
+            if (unit.second->getHealth() < min_hp) {
+                min_hp = unit.second->getHealth();
                 favorit = unit;
             }
         }

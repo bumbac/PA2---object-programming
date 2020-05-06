@@ -5,6 +5,9 @@
 #include "CTowerArcher.h"
 
 std::shared_ptr<CUnit> CTowerArcher::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
+    /**
+     * units is ordered, first unit is closest to finish
+     */
     for (auto & unit: units){
         TCoordinate unit_coordinates = unit.second->getPosition();
         size_t x_range = 0;

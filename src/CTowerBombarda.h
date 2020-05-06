@@ -5,7 +5,9 @@
 #ifndef SEM_CTOWERBOMBARDA_H
 #define SEM_CTOWERBOMBARDA_H
 
-
+/**
+ * Attacks unit in range with smallest health remaining.
+ */
 #include "CTower.h"
 
 class CTowerBombarda: public CTower{

@@ -31,12 +31,16 @@ bool CUnit::receiveAttack(const size_t &attack) {
     }
 }
 
-size_t CUnit::getHeuristic() const {
-    return m_heuristic;
+size_t CUnit::getHealth() const {
+    return current_hp;
 }
 
 CUnit::CUnit(const size_t &x, const size_t &y, char symbol, const std::shared_ptr<CTile> &goal, const std::string &name,
              const size_t steps, size_t currentHp) : CTile(x, y, symbol, goal), name(name), steps(steps),
                                                      current_hp(currentHp) {}
+
+TCoordinate CUnit::getPosition(void) const {
+    return CTile::getPosition();
+}
 
 

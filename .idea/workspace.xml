@@ -21,6 +21,20 @@
     <option name="formatViaClangd" value="false" />
     <option name="clangWarnings" value="-Wno-unused-variable,-Werror=implicit-function-declaration,-Wshadow,-Wno-shadow-field-in-constructor-modified,-Wno-shadow-ivar,-Wno--Wdangling-else" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="ProjectId" id="1bAH6FsSpUO23ftJ7NtLgxLZJ10" />
   <component name="ProjectViewState">
@@ -36,10 +50,10 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -60,7 +74,7 @@
       <workItem from="1588067802470" duration="23302000" />
       <workItem from="1588170916127" duration="33626000" />
       <workItem from="1588575938522" duration="18842000" />
-      <workItem from="1588663211177" duration="18770000" />
+      <workItem from="1588663211177" duration="35548000" />
     </task>
     <servers />
   </component>
@@ -73,10 +87,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="677" y="358" width="555" height="398" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588082532566" />
-    <state x="767" y="272" width="469" height="629" key="#com.intellij.ide.util.MemberChooser" timestamp="1588675588932">
+    <state x="767" y="272" width="469" height="636" key="#com.intellij.ide.util.MemberChooser" timestamp="1588770409950">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="767" y="272" width="469" height="629" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588675588932" />
+    <state x="767" y="272" width="469" height="636" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588770409950" />
     <state x="767" y="272" width="469" height="604" key="#com.intellij.ide.util.MemberChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588602731854" />
     <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588669249334">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -86,18 +100,20 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="524" y="300" width="1022" height="737" key="SettingsEditor/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588341122289" />
-    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1588669790490">
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1588762439355">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588669790490" />
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588762439355" />
     <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588581989192" />
-    <state x="624" y="252" key="run.anything.popup" timestamp="1588587314360">
+    <state x="624" y="252" key="run.anything.popup" timestamp="1588769841093">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="624" y="252" key="run.anything.popup/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588769841093" />
     <state x="624" y="252" key="run.anything.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587314360" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1588587893243">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1588760780972">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588760780972" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587893243" />
   </component>
 </project>

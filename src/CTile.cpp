@@ -28,7 +28,7 @@ bool CTile::canStep() const {
 }
 
 CTile::CTile(CUnit *source)
-    :position(TCoordinate(source->getPosition().x, source->getPosition().y)), m_heuristic(source->getHeuristic()), symbol(' '){}
+    : position(TCoordinate(source->getPosition().x, source->getPosition().y)), m_heuristic(source->getHealth()), symbol(' '){}
 
 std::ostream &operator<<(std::ostream &os, const CTile &tile) {
     os << tile.symbol;
