@@ -1,7 +1,7 @@
 set(CMAKE_CXX_COMPILER "/usr/bin/c++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "9.3.1")
+set(CMAKE_CXX_COMPILER_VERSION "10.1.1")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
@@ -42,8 +42,17 @@ if(CMAKE_COMPILER_IS_MINGW)
   set(MINGW 1)
 endif()
 set(CMAKE_CXX_COMPILER_ID_RUN 1)
+set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;m;mm;CPP)
 set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)
-set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;mm;CPP)
+
+foreach (lang C OBJC OBJCXX)
+  if (CMAKE_${lang}_COMPILER_ID_RUN)
+    foreach(extension IN LISTS CMAKE_${lang}_SOURCE_FILE_EXTENSIONS)
+      list(REMOVE_ITEM CMAKE_CXX_SOURCE_FILE_EXTENSIONS ${extension})
+    endforeach()
+  endif()
+endforeach()
+
 set(CMAKE_CXX_LINKER_PREFERENCE 30)
 set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)
 
@@ -73,7 +82,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include/c++/9;/usr/include/c++/9/x86_64-redhat-linux;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-redhat-linux/9/include;/usr/local/include;/usr/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include/c++/10;/usr/include/c++/10/x86_64-redhat-linux;/usr/include/c++/10/backward;/usr/lib/gcc/x86_64-redhat-linux/10/include;/usr/local/include;/usr/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/9;/usr/lib64;/lib64;/usr/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/10;/usr/lib64;/lib64;/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

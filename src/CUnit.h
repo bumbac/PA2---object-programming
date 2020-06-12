@@ -17,9 +17,9 @@ public:
      * Two units cannot share one tile.
      * @return false, unit cannot access other unit tile or place tower here.
      */
-    bool canStep() const override;
+    inline bool canStep() const override;
 
-    TCoordinate getPosition(void) const override;
+    inline TCoordinate getPosition(void) const override;
     /**
      * Unit tries to move as far as possible with limit of variable member steps. Unit can stay on one place.
      * @param path
@@ -36,7 +36,7 @@ public:
      * Used for Bombarda tower target selection
      * @return current_hp
      */
-    size_t getHealth() const;
+    inline size_t getHealth() const;
 protected:
     const std::string name;
     const size_t steps;

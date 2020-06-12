@@ -36,9 +36,20 @@ std::shared_ptr<CUnit> CTowerBombarda::attack(std::map<size_t, std::shared_ptr<C
     return nullptr;
 }
 
-std::shared_ptr<CTower> CTowerBombarda::clone(size_t &x, size_t &y, const std::shared_ptr<CTile> &goal) const {
-    return std::make_shared<CTowerBombarda>(this, x, y, goal);
+std::shared_ptr<CTower> CTowerBombarda::clone(size_t &x, size_t &y) const {
+    return std::make_shared<CTowerBombarda>(this, x, y);
 }
 
-CTowerBombarda::CTowerBombarda(const CTowerBombarda *original, size_t &x, size_t &y, const std::shared_ptr<CTile> &goal)
-    :CTower(original, x, y, goal){}
+CTowerBombarda::CTowerBombarda(const CTowerBombarda *original, size_t &x, size_t &y)
+    :CTower(original, x, y){}
+
+CTowerBombarda::CTowerBombarda(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price)
+    :CTower(x, y, symbol, range, damage, price) {}
+
+bool CTowerBombarda::canStep() const {
+    return CTower::canStep();
+}
+
+TCoordinate CTowerBombarda::getPosition(void) const {
+    return CTower::getPosition();
+}

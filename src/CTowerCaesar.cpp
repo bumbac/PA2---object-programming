@@ -4,7 +4,7 @@
 
 #include "CTowerCaesar.h"
 
-CTowerCaesar::CTowerCaesar(const CTowerCaesar *origin, size_t &x, size_t &y, const std::shared_ptr<CTile> &goal) : CTower(
+CTowerCaesar::CTowerCaesar( const CTowerCaesar *origin, size_t &x, size_t &y, std::shared_ptr<CTile> goal) : CTower(
         origin, x, y, goal) {}
 
 std::shared_ptr<CUnit> CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
@@ -38,6 +38,17 @@ std::shared_ptr<CUnit> CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUn
     return nullptr;
 }
 
-std::shared_ptr<CTower> CTowerCaesar::clone(size_t &x, size_t &y, const std::shared_ptr<CTile> &goal) const {
-    return std::make_shared<CTowerCaesar>(this, x, y, goal);
+CTowerCaesar::CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price)
+        : CTower(x, y, symbol, range, damage, price) {}
+
+std::shared_ptr<CTower> CTowerCaesar::clone(size_t &x, size_t &y) const {
+    return std::make_shared<CTowerCaesar>(this, x, y);
+}
+
+bool CTowerCaesar::canStep() const {
+    return CTower::canStep();
+}
+
+TCoordinate CTowerCaesar::getPosition(void) const {
+    return CTower::getPosition();
 }

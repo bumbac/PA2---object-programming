@@ -32,11 +32,23 @@ std::shared_ptr<CUnit> CTowerArcher::attack(std::map<size_t, std::shared_ptr<CUn
     return nullptr;
 }
 
-std::shared_ptr<CTower> CTowerArcher::clone(size_t &x, size_t &y, const std::shared_ptr<CTile> &goal)const {
-    return std::make_shared<CTowerArcher>(this, x, y, goal);
+std::shared_ptr<CTower> CTowerArcher::clone(size_t &x, size_t &y)const {
+    return std::make_shared<CTowerArcher>(this, x, y);
 }
 
-CTowerArcher::CTowerArcher(const CTowerArcher *original, size_t &x, size_t &y, const std::shared_ptr<CTile> &goal)
-:CTower(original, x, y, goal){}
+CTowerArcher::CTowerArcher(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price)
+                           : CTower(x, y, symbol, range, damage, price) {}
+
+CTowerArcher::CTowerArcher( const CTowerArcher *original, size_t &x, size_t &y)
+:CTower(original, x, y){}
+
+bool CTowerArcher::canStep() const {
+    return CTower::canStep();
+}
+
+TCoordinate CTowerArcher::getPosition(void) const {
+    return CTower::getPosition();
+}
+
 
 

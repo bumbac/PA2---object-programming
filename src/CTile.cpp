@@ -4,20 +4,8 @@
 
 #include "CTile.h"
 
-CTile::CTile(const size_t & x, const size_t & y, char symbol, std::shared_ptr<CTile> goal)
-        :position(TCoordinate(x,y)), symbol(symbol), m_heuristic(0) {
-    size_t x_offset = 0;
-    size_t y_offset = 0;
-    if (x > goal->position.x)
-        x_offset = x - goal->position.x;
-    else
-        x_offset = goal->position.x - x;
-    if (y > goal->position.y)
-        y_offset = y - goal->position.y;
-    else
-        y_offset = goal->position.y - y;
-    m_heuristic = x_offset + y_offset;
-}
+CTile::CTile(const size_t & x, const size_t & y, const char symbol)
+        : position(TCoordinate(x,y)), symbol(symbol){}
 
 TCoordinate CTile::getPosition(void) const {
     return this->position;
@@ -28,7 +16,7 @@ bool CTile::canStep() const {
 }
 
 CTile::CTile(CUnit *source)
-    : position(TCoordinate(source->getPosition().x, source->getPosition().y)), m_heuristic(source->getHealth()), symbol(' '){}
+    : position(TCoordinate(source->getPosition().x, source->getPosition().y)), symbol(' '){}
 
 std::ostream &operator<<(std::ostream &os, const CTile &tile) {
     os << tile.symbol;

@@ -11,6 +11,8 @@
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
+#include <filesystem>
+
 /**
  * This class provides console interface for choosing map or save, and for showing instructions
  * how to play game.
@@ -36,27 +38,20 @@ private:
      */
     void showMenu(void);
     /**
-     * Start game with save or map name stored in member variable m_name.
-     * m_name represents correct save or map, no problems with game initialization should occur.
+     * Start game with save or map name stored in member variable map_name.
+     * map_name represents correct save or map, no problems with game initialization should occur.
      */
-    bool startGame();
+    void startGame();
     /**
      *  Provides list of maps for new game. After selection checks if file is okay and sets
-     *  m_name.
+     *  map_name.
      */
     void selectMap();
     /**
-     *  Provides list of saves for new game. After selection checks if file is okay and sets
-     *  m_name.
-     */
-    void selectSave();
-    /**
-     * Shows description and stats for basic enemy units and towers.
-     */
-    void showUnits();
-    /**
      * Shows brief instructions on how to play game.
      */
+     //todo
+     //showUnits;
     void manual();
     /**
      * Starts template game with automated commands.
@@ -67,8 +62,11 @@ private:
      */
     void quitExit();
 
-    std::string m_name = "map1.txt";
-    bool is_new_game = true;
+    [[nodiscard]] bool checkFile(const std::filesystem::path & file_name) const;
+
+    std::filesystem::path map_name = std::filesystem::current_path()/"maps/map0.txt";
+    bool isSave = false;
+    int end_game_flag = false;
 };
 
 #endif //SEM_CAPPLICATION_H

@@ -24,7 +24,6 @@ bool CGame::sequence(void) {
         return true;
     map->attackTowers();
     return false;
-
 }
 
 void CGame::listen() {
@@ -92,6 +91,19 @@ void CGame::showManual() const {
     printf("man\nman\nman\n");
 }
 
-CGame::CGame(const std::string &game_name, bool is_new_game) {
+CGame::CGame(const std::filesystem::path &game_name, bool is_new_game)
+: map(std::make_unique<CMap>(CMap(game_name, is_new_game))){}
 
+void CGame::saveGame() const {
+    time_t t {0};
+    time(&t);
+    std::ofstream saveFile(ctime(&t), std::ios::out);
+    std::stringstream context;
+    context << map.get();
+    auto hasher = std::hash<std::string>();
+    auto hash = hasher(context.str());
+    saveFile << context.rdbuf() << std::setw(std::to_string((size_t) 0 - 1).length()) << std::setfill('0')<< hash;
+    saveFile.close();
 }
+
+

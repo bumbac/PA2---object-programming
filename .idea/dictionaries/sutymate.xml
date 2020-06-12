@@ -2,13 +2,17 @@
   <dictionary name="sutymate">
     <words>
       <w>bombarda</w>
+      <w>capplication</w>
+      <w>cgame</w>
       <w>cmap</w>
       <w>ctile</w>
       <w>ctower</w>
       <w>ctowerarcher</w>
       <w>cunit</w>
+      <w>hasher</w>
       <w>mamanges</w>
       <w>sutymate</w>
+      <w>timestep</w>
     </words>
   </dictionary>
 </component>

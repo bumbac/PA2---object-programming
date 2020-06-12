@@ -5,19 +5,23 @@
 #ifndef SEM_CTOWERARCHER_H
 #define SEM_CTOWERARCHER_H
 
-
 #include "CTower.h"
 /**
- * Subclass of CTower.
  * Attacks enemy closest to finish.
  */
-class CTowerArcher: public CTower {
+class CTowerArcher : public CTower {
 public:
-    CTowerArcher(const CTowerArcher * original, size_t & x, size_t & y, const std::shared_ptr<CTile> & goal);
+    CTowerArcher(const CTowerArcher * original, size_t & x, size_t & y);
+
+    CTowerArcher(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price);
+
+    bool canStep() const override;
+
+    TCoordinate getPosition(void) const override;
 
     std::shared_ptr<CUnit> attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
 
-    std::shared_ptr<CTower> clone(size_t &x, size_t &y, const std::shared_ptr<CTile> &goal) const override;
+    std::shared_ptr<CTower> clone(size_t &x, size_t &y) const override;
 };
 
 

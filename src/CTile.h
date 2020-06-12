@@ -1,4 +1,4 @@
-//
+//return CTower::canStep();
 // Created by sutymate on 4/28/20.
 //
 
@@ -24,13 +24,13 @@ struct TCoordinate{
 class CTile{
 public:
     /**
-     * Creates tile and calculates heuristic value.
+     * Creates tile and calculates value value.
      * @param x representing width position
      * @param y representing height position
      * @param symbol symbol shown in game, walls represented by '|', '-', '+'
      * @param goal
      */
-    CTile(const size_t & x, const size_t & y, char symbol, std::shared_ptr<CTile> goal);
+    CTile(const size_t & x, const size_t & y, const char symbol);
     CTile( CUnit * source);
     /**
      * Functions used in unit movement and tower placing.
@@ -50,6 +50,5 @@ public:
 protected:
     const TCoordinate position;
     char symbol;
-    size_t m_heuristic;
 };
 #endif //SEM_CTILE_H

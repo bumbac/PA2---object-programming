@@ -11,6 +11,7 @@
 #include <list>
 #include <algorithm>
 #include <ostream>
+#include <filesystem>
 #include "CTile.h"
 #include "CTower.h"
 #include "CUnit.h"
@@ -21,8 +22,7 @@ struct Data{
     /**
      * Constructor for new game.
      */
-    Data (size_t & limit)
-        :m_time_step(0), m_units_killed(0), m_units_escaped(0), m_units_alive(0), m_money(50), m_limit(limit){}
+    Data () = default;
     /**
      * Constructor for restoring game
      * @param time_step time counter, every timestep was one sequence of units movement, tower attack, user action resolution.
@@ -45,7 +45,9 @@ struct Data{
 
 class CMap{
 public:
-    /**
+    CMap(const std::filesystem::path& path, bool is_new_game);
+
+/**
      * Move units in order from closest to finish point. Move only on predefined path.
      * @return true if enough units have passed to lose the game
      */
@@ -77,7 +79,7 @@ public:
      * @return
      */
     friend std::ostream &operator<<(std::ostream &os, const CMap &map);
-
+    size_t heuristic(const size_t & x, const size_t & y) const;
 private:
     /**
      * In tiles are stored all elements of map(tiles, units, towers).
@@ -86,7 +88,7 @@ private:
     /**
      * All available types of towers, used for cloning.
      */
-    std::map<std::string, std::shared_ptr<CTower>> all_towers;
+    std::map<char, std::shared_ptr<CTower>> all_towers;
     /**
      * All available upgrades, used for upgrading units or towers. Objects are created in constructor, none is added.
      */
@@ -103,15 +105,37 @@ private:
      * All tiles which make path ordered from finish to start tile.
      */
     std::map<size_t, std::shared_ptr<CTile>> path;
-    size_t height;
-    size_t width;
-    const std::shared_ptr<CTile> start;
-    const std::shared_ptr<CTile> finish;
-    Data data;
+    size_t height{};
+    size_t width{};
+    std::shared_ptr<CTile> start;
+    std::shared_ptr<CTile> finish;
+    Data data{};
+    /**
+     * Checks if player is placing tower on path to finish.
+     * @param x
+     * @param y
+     * @return true if blocks path to finish
+     */
+    [[nodiscard]] bool blocksPath(const size_t & x, const size_t & y) const;
 
-    bool blocksPath(const size_t & x, const size_t & y) const;
+    /**
+     * BFS or A star used for finding shortest path from start to finish.
+     * @param useBFS if true use BFS if false use A star.
+     */
+    void makePath(bool useBFS);
 
 };
 
+typedef struct Node{
+    Node(CMap & map, const size_t & x, const size_t & y)
+            : value(map.heuristic(x, y)){}
+    std::shared_ptr<Node> parent = nullptr;
+    int flag = 0;
+    size_t value = 0;
+    std::shared_ptr<CTile> tile = nullptr;
 
+}Node;
+inline bool operator<(const std::shared_ptr<Node> & first, const std::shared_ptr<Node> & second){
+    return first->value < second->value;
+}
 #endif //SEM_CMAP_H

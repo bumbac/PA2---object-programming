@@ -5,7 +5,7 @@
       <config projectName="sem" targetName="sem" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
@@ -39,15 +39,15 @@
   <component name="ProjectId" id="1bAH6FsSpUO23ftJ7NtLgxLZJ10" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AG1/prog1" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -58,11 +58,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="sem" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sem" TARGET_NAME="sem" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sem" RUN_TARGET_NAME="sem">
+    <configuration name="sem" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sem" TARGET_NAME="sem" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sem" RUN_TARGET_NAME="sem">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",INHERITORS_AND_CATEGORIES" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,46 +78,72 @@
       <workItem from="1588067802470" duration="23302000" />
       <workItem from="1588170916127" duration="33626000" />
       <workItem from="1588575938522" duration="18842000" />
-      <workItem from="1588663211177" duration="35548000" />
+      <workItem from="1588663211177" duration="38116000" />
+      <workItem from="1588773317391" duration="852000" />
+      <workItem from="1588836288365" duration="13000" />
+      <workItem from="1590561267024" duration="900000" />
+      <workItem from="1590562186343" duration="322000" />
+      <workItem from="1590562998946" duration="12000" />
+      <workItem from="1590563037913" duration="29000" />
+      <workItem from="1590563083034" duration="22000" />
+      <workItem from="1590563123009" duration="36000" />
+      <workItem from="1590563267349" duration="16000" />
+      <workItem from="1590563299759" duration="36000" />
+      <workItem from="1590563740689" duration="13000" />
+      <workItem from="1590563775624" duration="10491000" />
+      <workItem from="1590590470601" duration="3322000" />
+      <workItem from="1590601566331" duration="2212000" />
+      <workItem from="1591771708453" duration="95000" />
+      <workItem from="1591771837181" duration="34310000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588155272025">
+    <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590565201483">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1590565201483" />
     <state x="417" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588155272025" />
     <state x="677" y="358" width="555" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588082532566">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="677" y="358" width="555" height="398" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588082532566" />
-    <state x="767" y="272" width="469" height="636" key="#com.intellij.ide.util.MemberChooser" timestamp="1588770409950">
+    <state x="767" y="272" width="477" height="643" key="#com.intellij.ide.util.MemberChooser" timestamp="1591859965123">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="767" y="272" width="469" height="636" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588770409950" />
-    <state x="767" y="272" width="469" height="604" key="#com.intellij.ide.util.MemberChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588602731854" />
-    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588669249334">
+    <state x="767" y="272" width="477" height="643" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1591859965123" />
+    <state x="767" y="272" width="469" height="604" key="#com.intellij.ide.util.MemberChooser/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1590602250544" />
+    <state x="2443" y="261" width="624" height="535" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591771792544">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2443" y="261" width="624" height="535" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.1053/1920.0.1680.1050@1920.0.1680.1050" timestamp="1591771792544" />
+    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591881013086">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588669249334" />
-    <state x="524" y="300" width="1022" height="737" key="SettingsEditor" timestamp="1588341122289">
+    <state x="693" y="302" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1591881013086" />
+    <state x="742" y="310" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591869519452">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="742" y="310" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1591869519452" />
+    <state x="524" y="300" width="1022" height="737" key="SettingsEditor" timestamp="1590565279211">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="524" y="300" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1590565279211" />
     <state x="524" y="300" width="1022" height="737" key="SettingsEditor/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588341122289" />
-    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1588762439355">
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog" timestamp="1591947504743">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588762439355" />
-    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588581989192" />
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1591947504743" />
+    <state x="704" y="195" width="501" height="723" key="refactoring.ChangeSignatureDialog/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1590602141218" />
     <state x="624" y="252" key="run.anything.popup" timestamp="1588769841093">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="252" key="run.anything.popup/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588769841093" />
     <state x="624" y="252" key="run.anything.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587314360" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1588760780972">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1590592911957">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1680.1050@0.27.1920.1053" timestamp="1588760780972" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1588587893243" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1680.1050/0.27.1920.1053@0.27.1920.1053" timestamp="1590592911957" />
   </component>
 </project>

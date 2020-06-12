@@ -10,6 +10,7 @@
 #include <thread>
 #include "CMap.h"
 #include <fstream>
+#include <filesystem>
 /**
  * Class operates actions outside of game itself (loading game, parsing user actions, saving, showing manual,
  * exiting game).
@@ -19,12 +20,12 @@ class CGame{
 public:
     /**
      *
-     * @param game_name represents file name with correct content - file exists, has correct structure, wasn't modified
+     * @param game_name represents path with correct content - file exists, has correct structure, wasn't modified
      * outside of game system
-     * @param is_new_game if is_new_game is true, load defaults in starting new game, otherwise load game data from
+     * @param is_new_game if isSave is true, load defaults in starting new game, otherwise load game data from
      * file.
      */
-    CGame(const std::string & game_name, bool is_new_game);
+    CGame(const std::filesystem::path & game_name, bool is_new_game);
     /**
      * Start manages all user actions and ends the game correctly.
      * User input is executed through std::cin and is operated by new thread started in this function.
@@ -61,6 +62,7 @@ private:
      * Saves the game.
      */
     void saveGame() const;
+
     std::unique_ptr<CMap> map;
     std::list<std::string> userCommands;
 };
