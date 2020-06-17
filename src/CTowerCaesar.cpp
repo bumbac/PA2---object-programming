@@ -4,11 +4,19 @@
 
 #include "CTowerCaesar.h"
 
-CTowerCaesar::CTowerCaesar( const CTowerCaesar *origin, size_t &x, size_t &y, std::shared_ptr<CTile> goal) : CTower(
-        origin, x, y, goal) {}
 
-std::shared_ptr<CUnit> CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
+
+CTowerCaesar::CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double ratio)
+        : CTower(x, y, symbol, range, damage, price, ratio) {}
+
+CTowerCaesar::CTowerCaesar( const CTowerCaesar *origin, const size_t &x, const size_t &y)
+    : CTower(origin, x, y) {}
+
+size_t CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
     for (auto & unit: units){
+        // last units from finish is starting point, do not kill
+        if (unit.first == units.rbegin()->first)
+            continue;
         TCoordinate unit_coordinates = unit.second->getPosition();
         size_t x_range = 0;
         if (position.x > unit_coordinates.x)
@@ -24,31 +32,18 @@ std::shared_ptr<CUnit> CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUn
         if (std::max(x_range, y_range) <= range) {
             if (std::rand() % 10 == 0) {
                 printf("MMMMMMMMMONSTER KILL!!!!\n");
-                units.erase(unit.first);
-                return unit.second;
+                return unit.first;
             }
             else{
                 if (unit.second->receiveAttack(damage)) {
-                    units.erase(unit.first);
-                    return unit.second;
+                    return unit.first;
                 }
             }
         }
     }
-    return nullptr;
+    return 0;
 }
-
-CTowerCaesar::CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price)
-        : CTower(x, y, symbol, range, damage, price) {}
 
 std::shared_ptr<CTower> CTowerCaesar::clone(size_t &x, size_t &y) const {
     return std::make_shared<CTowerCaesar>(this, x, y);
-}
-
-bool CTowerCaesar::canStep() const {
-    return CTower::canStep();
-}
-
-TCoordinate CTowerCaesar::getPosition(void) const {
-    return CTower::getPosition();
 }

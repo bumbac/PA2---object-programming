@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.cpp" "/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o"
   "/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.cpp" "/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o"
   "/home/sutymate/Progtest/PA2/sem/src/CUnit.cpp" "/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles/sem.dir/src/CUnit.cpp.o"
-  "/home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp" "/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles/sem.dir/src/CUpgrade.cpp.o"
   "/home/sutymate/Progtest/PA2/sem/src/main.cpp" "/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles/sem.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

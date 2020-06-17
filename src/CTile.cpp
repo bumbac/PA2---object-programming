@@ -3,24 +3,35 @@
 //
 
 #include "CTile.h"
+CTile::CTile(const TCoordinate position, char symbol)
+        : position(position), symbol(symbol){}
 
-CTile::CTile(const size_t & x, const size_t & y, const char symbol)
-        : position(TCoordinate(x,y)), symbol(symbol){}
+CTile::CTile(const size_t x, const size_t y, char symbol)
+        :position(x, y), symbol(symbol){}
 
 TCoordinate CTile::getPosition(void) const {
     return this->position;
 }
 
 bool CTile::canStep() const {
-    return symbol == ' ';
+    return symbol == ' ' || symbol == 'F' || symbol == '.';
 }
-
-CTile::CTile(CUnit *source)
-    : position(TCoordinate(source->getPosition().x, source->getPosition().y)), symbol(' '){}
 
 std::ostream &operator<<(std::ostream &os, const CTile &tile) {
     os << tile.symbol;
     return os;
+}
+
+void CTile::save(std::ostream &middle_man){
+    middle_man << symbol;
+}
+
+char CTile::getSymbol(){
+    return symbol;
+}
+
+void CTile::setSymbol(char symbol) {
+    this->symbol = symbol;
 }
 
 bool TCoordinate::operator==(const TCoordinate &other) const {

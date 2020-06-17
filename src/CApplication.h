@@ -46,12 +46,10 @@ private:
      *  Provides list of maps for new game. After selection checks if file is okay and sets
      *  map_name.
      */
-    void selectMap();
+    bool selectMap();
     /**
      * Shows brief instructions on how to play game.
      */
-     //todo
-     //showUnits;
     void manual();
     /**
      * Starts template game with automated commands.
@@ -60,13 +58,13 @@ private:
     /**
      * At the moment of calling quitExit all resources are freed correctly and save is stored.
      */
-    void quitExit();
 
-    [[nodiscard]] bool checkFile(const std::filesystem::path & file_name) const;
+    bool checkFile(const std::filesystem::path & file_name) const;
 
-    std::filesystem::path map_name = std::filesystem::current_path()/"maps/map0.txt";
-    bool isSave = false;
-    int end_game_flag = false;
+    std::filesystem::path map_name = "maps/map0.txt";
+    int fill_width = 80;
+    bool is_new_game = false;
+
 };
 
 #endif //SEM_CAPPLICATION_H

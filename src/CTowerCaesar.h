@@ -1,4 +1,4 @@
-//
+//in
 // Created by sutymate on 5/5/20.
 //
 
@@ -11,15 +11,11 @@
  */
 class CTowerCaesar: public CTower {
 public:
-    CTowerCaesar(const CTowerCaesar *origin, size_t &x, size_t &y);
+    CTowerCaesar(const CTowerCaesar *origin, const size_t &x, const size_t &y);
 
-    CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price);
+    CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double ratio);
 
-    bool canStep() const override;
-
-    TCoordinate getPosition(void) const override;
-
-    std::shared_ptr<CUnit> attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
+    size_t attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
 
     std::shared_ptr<CTower> clone(size_t &x, size_t &y) const override;
 };

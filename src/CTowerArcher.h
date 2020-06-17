@@ -11,15 +11,11 @@
  */
 class CTowerArcher : public CTower {
 public:
-    CTowerArcher(const CTowerArcher * original, size_t & x, size_t & y);
+    CTowerArcher(const CTowerArcher * original, const size_t &x, const size_t &y);
 
-    CTowerArcher(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price);
+    CTowerArcher(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double ration);
 
-    bool canStep() const override;
-
-    TCoordinate getPosition(void) const override;
-
-    std::shared_ptr<CUnit> attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
+    size_t attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
 
     std::shared_ptr<CTower> clone(size_t &x, size_t &y) const override;
 };

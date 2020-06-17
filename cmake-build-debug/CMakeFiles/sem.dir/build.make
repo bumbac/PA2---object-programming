@@ -148,22 +148,9 @@ CMakeFiles/sem.dir/src/CUnit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sem.dir/src/CUnit.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sutymate/Progtest/PA2/sem/src/CUnit.cpp -o CMakeFiles/sem.dir/src/CUnit.cpp.s
 
-CMakeFiles/sem.dir/src/CUpgrade.cpp.o: CMakeFiles/sem.dir/flags.make
-CMakeFiles/sem.dir/src/CUpgrade.cpp.o: ../src/CUpgrade.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sem.dir/src/CUpgrade.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sem.dir/src/CUpgrade.cpp.o -c /home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp
-
-CMakeFiles/sem.dir/src/CUpgrade.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sem.dir/src/CUpgrade.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp > CMakeFiles/sem.dir/src/CUpgrade.cpp.i
-
-CMakeFiles/sem.dir/src/CUpgrade.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sem.dir/src/CUpgrade.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp -o CMakeFiles/sem.dir/src/CUpgrade.cpp.s
-
 CMakeFiles/sem.dir/src/CTowerArcher.cpp.o: CMakeFiles/sem.dir/flags.make
 CMakeFiles/sem.dir/src/CTowerArcher.cpp.o: ../src/CTowerArcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sem.dir/src/CTowerArcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sem.dir/src/CTowerArcher.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sem.dir/src/CTowerArcher.cpp.o -c /home/sutymate/Progtest/PA2/sem/src/CTowerArcher.cpp
 
 CMakeFiles/sem.dir/src/CTowerArcher.cpp.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/sem.dir/src/CTowerArcher.cpp.s: cmake_force
 
 CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o: CMakeFiles/sem.dir/flags.make
 CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o: ../src/CTowerBombarda.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o -c /home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.cpp
 
 CMakeFiles/sem.dir/src/CTowerBombarda.cpp.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/sem.dir/src/CTowerBombarda.cpp.s: cmake_force
 
 CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o: CMakeFiles/sem.dir/flags.make
 CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o: ../src/CTowerCaesar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o -c /home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.cpp
 
 CMakeFiles/sem.dir/src/CTowerCaesar.cpp.i: cmake_force
@@ -209,7 +196,6 @@ sem_OBJECTS = \
 "CMakeFiles/sem.dir/src/CTile.cpp.o" \
 "CMakeFiles/sem.dir/src/CTower.cpp.o" \
 "CMakeFiles/sem.dir/src/CUnit.cpp.o" \
-"CMakeFiles/sem.dir/src/CUpgrade.cpp.o" \
 "CMakeFiles/sem.dir/src/CTowerArcher.cpp.o" \
 "CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o" \
 "CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o"
@@ -224,13 +210,12 @@ sem: CMakeFiles/sem.dir/src/CMap.cpp.o
 sem: CMakeFiles/sem.dir/src/CTile.cpp.o
 sem: CMakeFiles/sem.dir/src/CTower.cpp.o
 sem: CMakeFiles/sem.dir/src/CUnit.cpp.o
-sem: CMakeFiles/sem.dir/src/CUpgrade.cpp.o
 sem: CMakeFiles/sem.dir/src/CTowerArcher.cpp.o
 sem: CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o
 sem: CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o
 sem: CMakeFiles/sem.dir/build.make
 sem: CMakeFiles/sem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable sem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sutymate/Progtest/PA2/sem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable sem"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sem.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

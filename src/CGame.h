@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <locale>
-#include <thread>
 #include "CMap.h"
 #include <fstream>
 #include <filesystem>
@@ -25,7 +24,7 @@ public:
      * @param is_new_game if isSave is true, load defaults in starting new game, otherwise load game data from
      * file.
      */
-    CGame(const std::filesystem::path & game_name, bool is_new_game);
+    CGame(const std::filesystem::path &game_name, bool is_new_game, std::list<std::string> & user_commands);
     /**
      * Start manages all user actions and ends the game correctly.
      * User input is executed through std::cin and is operated by new thread started in this function.
@@ -58,12 +57,10 @@ private:
      * Pauses the game, shows brief instructions, units and towers descriptions and saves the game.
      */
     void showManual() const;
-    /**
-     * Saves the game.
-     */
-    void saveGame() const;
-
+    int fill_width = 80;
     std::unique_ptr<CMap> map;
     std::list<std::string> userCommands;
+
+    void lose();
 };
 #endif //SEM_CGAME_H

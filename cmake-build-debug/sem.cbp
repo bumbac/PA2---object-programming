@@ -134,15 +134,6 @@
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.h">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp">
-			<Option target="sem"/>
-		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUpgrade.h">
-			<Option target="sem"/>
-		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/ETarget.h">
-			<Option target="sem"/>
-		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/main.cpp">
 			<Option target="sem"/>
 		</Unit>

@@ -1,0 +1,37 @@
+Welcome to Tower defense game!
+
+Once there was a mighty castle in the land of lord Thakur. His reign was strong,
+his choices just and wise and his folks were all happy in the days before now.
+Unfortunately all this was bound to change when hordes of angry enemies from
+other castle emerged and marched to war with lord Thakur. Avast! Kingdom of lord
+Thakur needs you! Prevent enemies from hurting the innocent, avert the unfair
+damage to the land of lord Thakur. You can see the place where enemies start
+their crusade. Lord Thakur has provided you with resources to build defense
+towers on his land. Build towers which kill the enemies but be careful. You only
+have so much gold and you earn it by killing the enemies. If too many enemies
+stride through your defense and reach the castle our lord Thakur will be
+defeated.
+
+Game starts when you select < 1. Start game > on game menu. You can see there
+the map or save which will be played.
+
+You can select other maps by selecting < 2. Select map >. List of available
+maps will be shown. Maps are stored in <game directory>/maps.
+
+This game provides game saving and replaying game from where you stopped.
+Choose your saved game by selecting < 3. Select save > from game menu. List of
+available saves will be shown. Saves are stored in <game directory>/saves.
+
+If you need to understand the game before starting one on your own you can
+select < 5. Start example game > from game menu. One quick game will be shown
+played by computer. You can exit the example game anytime by writing exit or
+quit to the console and you will be returned to the game menu. 
+
+During the game you can enter shop which shows all the important information
+about units, towers, upgrades and available commands. View the shop by writing
+shop or man or manual to the console. You can return to game from shop by
+writing back or resume or return. Everytime you visit the shop and when you
+exit the game your game will be saved. Each save is named with the time when
+saved.
+
+Write back to return to menu...

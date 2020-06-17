@@ -5,13 +5,13 @@
 #ifndef SEM_CTOWER_H
 #define SEM_CTOWER_H
 
+#include <map>
 #include "CTile.h"
-#include "CUpgrade.h"
+#include "CUnit.h"
  /**
  * abstract class representing
  */
 class CTower: public CTile{
-
 public:
     /**
      * Creates a tower object same as @param origin with new position.
@@ -20,15 +20,15 @@ public:
      * @param y new position
      * @param goal for computing value
      */
-    CTower(const CTower *origin, size_t & x, size_t & y);
+    CTower(const CTower *origin, const size_t &x, const size_t &y);
 
-    CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price);
+    CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double ration);
 
     /**
      * Abstract function, every type of tower has special implementation.
      */
-    virtual std::shared_ptr<CUnit> attack(std::map<size_t, std::shared_ptr<CUnit>> & units) const = 0;
-
+    virtual size_t attack(std::map<size_t, std::shared_ptr<CUnit>> & units) const = 0;
+    void upgrade(char symbol);
     /**
      * CTower is abstract, each type makes its own clone in new position.
      * @param x new position
@@ -36,17 +36,18 @@ public:
      * @param goal for computing value
      * @return smart pointer for automatic deallocation
      */
-    virtual std::shared_ptr<CTower> clone(size_t & x, size_t & y)const = 0;
+    virtual std::shared_ptr<CTower> clone(size_t &x, size_t &y)const = 0;
 
-    inline bool canStep() const override;
+    void save(std::ostream & middle_man)override;
 
-    TCoordinate getPosition(void) const override;
-
-    inline size_t getPrice(void)const;
+    size_t getPrice(void)const;
+    size_t getDamage(void)const;
+    size_t getRange(void)const;
 
 protected:
     size_t range;
     size_t damage;
     size_t price;
+    double upgrade_ratio;
 };
 #endif //SEM_CTOWER_H

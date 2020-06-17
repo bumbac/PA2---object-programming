@@ -9,8 +9,6 @@ CMakeFiles/sem.dir/src/CApplication.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CGame.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CGame.cpp
  /home/sutymate/Progtest/PA2/sem/src/CGame.h
@@ -18,8 +16,6 @@ CMakeFiles/sem.dir/src/CGame.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CMap.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CMap.cpp
  /home/sutymate/Progtest/PA2/sem/src/CMap.h
@@ -29,55 +25,36 @@ CMakeFiles/sem.dir/src/CMap.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.h
  /home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CTile.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.cpp
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
- /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CTower.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.cpp
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CTowerArcher.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CTowerArcher.cpp
  /home/sutymate/Progtest/PA2/sem/src/CTowerArcher.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CTowerBombarda.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.cpp
  /home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CTowerCaesar.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.cpp
  /home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/CUnit.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.cpp
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
-CMakeFiles/sem.dir/src/CUpgrade.cpp.o
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.cpp
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
 CMakeFiles/sem.dir/src/main.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CApplication.h
  /home/sutymate/Progtest/PA2/sem/src/CGame.h
@@ -85,6 +62,4 @@ CMakeFiles/sem.dir/src/main.cpp.o
  /home/sutymate/Progtest/PA2/sem/src/CTile.h
  /home/sutymate/Progtest/PA2/sem/src/CTower.h
  /home/sutymate/Progtest/PA2/sem/src/CUnit.h
- /home/sutymate/Progtest/PA2/sem/src/CUpgrade.h
- /home/sutymate/Progtest/PA2/sem/src/ETarget.h
  /home/sutymate/Progtest/PA2/sem/src/main.cpp

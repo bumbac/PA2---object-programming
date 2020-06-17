@@ -366,33 +366,6 @@ src/CUnit.cpp.s:
 	$(MAKE) -f CMakeFiles/sem.dir/build.make CMakeFiles/sem.dir/src/CUnit.cpp.s
 .PHONY : src/CUnit.cpp.s
 
-src/CUpgrade.o: src/CUpgrade.cpp.o
-
-.PHONY : src/CUpgrade.o
-
-# target to build an object file
-src/CUpgrade.cpp.o:
-	$(MAKE) -f CMakeFiles/sem.dir/build.make CMakeFiles/sem.dir/src/CUpgrade.cpp.o
-.PHONY : src/CUpgrade.cpp.o
-
-src/CUpgrade.i: src/CUpgrade.cpp.i
-
-.PHONY : src/CUpgrade.i
-
-# target to preprocess a source file
-src/CUpgrade.cpp.i:
-	$(MAKE) -f CMakeFiles/sem.dir/build.make CMakeFiles/sem.dir/src/CUpgrade.cpp.i
-.PHONY : src/CUpgrade.cpp.i
-
-src/CUpgrade.s: src/CUpgrade.cpp.s
-
-.PHONY : src/CUpgrade.s
-
-# target to generate assembly for a file
-src/CUpgrade.cpp.s:
-	$(MAKE) -f CMakeFiles/sem.dir/build.make CMakeFiles/sem.dir/src/CUpgrade.cpp.s
-.PHONY : src/CUpgrade.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -456,9 +429,6 @@ help:
 	@echo "... src/CUnit.o"
 	@echo "... src/CUnit.i"
 	@echo "... src/CUnit.s"
-	@echo "... src/CUpgrade.o"
-	@echo "... src/CUpgrade.i"
-	@echo "... src/CUpgrade.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
