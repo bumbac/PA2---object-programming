@@ -34,4 +34,14 @@ writing back or resume or return. Everytime you visit the shop and when you
 exit the game your game will be saved. Each save is named with the time when
 saved.
 
+Available commands:
+
+buy <TOWER SYMBOL> <WIDTH POSITION> <HEIGHT POSITION>     : buy and place tower
+upgrade <TOWER SYMBOL>                                    : upgrades towers
+shop                                                      : enter shop
+man, manual                                               : enter manual
+save                                                      : save game
+exit, quit                                                : save and exit game
+back                                                      : return to game/menu
+
 Write back to return to menu...

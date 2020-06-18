@@ -2,18 +2,17 @@
 // Created by sutymate on 5/5/20.
 //
 
-#ifndef SEM_CTOWERCAESAR_H
-#define SEM_CTOWERCAESAR_H
+#ifndef SEM_CTOWERCAESAR_HPP
+#define SEM_CTOWERCAESAR_HPP
 
-#include "CTower.h"
+#include "CTower.hpp"
 /**
  * Tower has 10% chance of striking critical damage to unit closest to finish in range and killing it instantly.
  */
 class CTowerCaesar: public CTower {
 public:
-    CTowerCaesar(const CTowerCaesar *origin, const size_t &x, const size_t &y);
-
-    CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double ratio);
+    CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price,
+                 double ratio, std::string description);
 
     size_t attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const override;
 
@@ -21,4 +20,4 @@ public:
 };
 
 
-#endif //SEM_CTOWERCAESAR_H
+#endif //SEM_CTOWERCAESAR_HPP

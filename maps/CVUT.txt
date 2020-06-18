@@ -1,0 +1,70 @@
+97 60 20 20
++-----------------------------------------------------------------------------------------------+
+|       XXX           XX                                                                        |
+|     XX   XX       XX                                                                          |
+|   XX       X    XX                                      +-----------------------------------+ |
+|XXX          X  XX                                       |                                   | |
+|  XX          XX                                         |  XXXXX  X   X  X   X  XXXXXXX     | |
+|   XX       XX                     XXXXXXX               |  X      X   X  X   X     X        | |
+|    XXX   XX                      XX     XXXX        XXXX|  X      X   X  X   X     X        | |
+|      XX X                     X             X       X   |  X      XX XX  X   X     X        | |
+|                              XX       F     X       X   |  X       XXX   X   X     X        | |
+|                              X             XX       X   |  XXXXX    X    XXXXX     X        | |
+|                              XXXX         XX        X   |                                   | |
+|                                 XX     XXX          XXXX+-------------------+               | |
+|                                    X XXX                                    |               | |
+|                                                                             |               | |
+|  XXX                                                                        |               | |
+|                                                                             |               | |
+|        XXX                                          XX                      |               | |
+|                  XXX                   XX          XX                       |               | |
+|                XXXXX                  X  XX      XXX                        |               | |
+|                        X X          XX    XXX   XX                          |               | |
+|                        XXXX        XX       XXXXX                           |               | |
+|                                  XX          XXXXXX                     XX  |               | |
+|                                            XXX   XXXXX                 XX   +---------------+ |
+|X                                                    XX               XX                       |
+|XXXX                                                XX      X       X X                        |
+|     XXX                                           XX      XXX X  X                            |
+|        XXX                                      XXX          X XXX X                    XX    |
+|          XXXX                                  XX               XXXXXXXX               XX     |
+|         XX  XX    XXX                                          XX    XXXXX            XX      |
+|        XX    XXX XX XX                                                  XXXXXX      XX        |
+|       XX      XX      X XX                                            XX   XXXXX             |
+|      XX       XX       XX X                                          XX        XXXXX          |
+|    XX        XX      XXX                                           XXX          X XXXX        |
+|  XX        XX       XXX  X X                                       X           X     XXX      |
+|XXX        XX       XX     XXX X                                                        XX     |
+|X         X        XX     XX      X                                                     XX     |
+|        XXX       XX      X       X XX                                                XX       |
+|        X        XX      X          XXXX                                             XX        |
+|       X         X     XX         XX     XXX        XX                                         |
+|     XXX          XXX XX         XX       XXXXX    XXX                                         |
+|    XX              XXXX       XXX       XX    XXXX     XX                                     |
+|  XXX                  XXXX   XX        X       XX       XX                                    |
+| XX                       XXXX        XX       XX          XX                                  |
+|XX                          XXX      XX       XX              XXX                              |
+|X                              XXX XX        XX                 XXXX                           |
+|                                  XXXX    XXX                      XXXX                        |
+|                                     XXXXXXX                  X XXXXX                          |
+|                                                X  XX XXXXXXX X                                |
+|                                 XXXXXXXX  X X X                                               |
+|XXX       XX XXX X X  XX  X X X X                                                           XXX|
+|    XXXXXX                                                                             XXX XX  |
+|                                                                                     XXX       |
+|                                                                                     X         |
+|                                                                                  X            |
+|                                                                                XXX            |
+|                                                                                X           S  |
+|                                                                               X               |
+|                                                                              XX               |
++------------------------------------------------------------------------------X----------------+
+A 15 6 15
+Attacks enemy closest to finish.
+B 20 6 15
+Attacks unit in range with smallest health remaining.
+C 10 8 15
+Tower has 10% chance of striking critical damage to unit closest to finish in range and killing it instantly.
+# 10 5 30
+
+04663130535833811357

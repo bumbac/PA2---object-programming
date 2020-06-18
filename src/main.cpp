@@ -1,4 +1,4 @@
-#include "CApplication.h"
+#include "CApplication.hpp"
 /**
  * @mainpage Tower Defense
  *

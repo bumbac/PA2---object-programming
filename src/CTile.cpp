@@ -2,12 +2,13 @@
 // Created by sutymate on 4/29/20.
 //
 
-#include "CTile.h"
+#include "CTile.hpp"
+
 CTile::CTile(const TCoordinate position, char symbol)
         : position(position), symbol(symbol){}
 
 CTile::CTile(const size_t x, const size_t y, char symbol)
-        :position(x, y), symbol(symbol){}
+        : position(x, y), symbol(symbol){}
 
 TCoordinate CTile::getPosition(void) const {
     return this->position;
@@ -22,8 +23,8 @@ std::ostream &operator<<(std::ostream &os, const CTile &tile) {
     return os;
 }
 
-void CTile::save(std::ostream &middle_man){
-    middle_man << symbol;
+void CTile::save(std::ostream &save_stream)const {
+    save_stream << symbol;
 }
 
 char CTile::getSymbol(){

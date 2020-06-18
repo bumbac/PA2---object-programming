@@ -19,9 +19,11 @@ F               |                                                               
 |                     |                                                       |          |
 +---------------------+-------------------------------------------------------+----------+
 A 5 5 10
+Attacks enemy closest to finish.
 B 6 6 15
+Attacks unit in range with smallest health remaining.
 C 4 8 15
+Tower has 10% chance of striking critical damage to unit closest to finish in range and killing it instantly.
 # 3 5 30
 
-1
-01107544460609286123
+11245240117747172469

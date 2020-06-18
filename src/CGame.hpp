@@ -2,12 +2,12 @@
 // Created by sutymate on 4/28/20.
 //
 
-#ifndef SEM_CGAME_H
-#define SEM_CGAME_H
+#ifndef SEM_CGAME_HPP
+#define SEM_CGAME_HPP
 
 #include <iostream>
 #include <locale>
-#include "CMap.h"
+#include "CMap.hpp"
 #include <fstream>
 #include <filesystem>
 /**
@@ -34,33 +34,34 @@ public:
     void start(void);
 
 private:
-    /**
-     * @return represents player lose
+    /** Sequence of first moving the units and then attacking them with towers. Dead units are replaced by new tiles.
+     * @return represents player lost
      */
     bool sequence(void);
     /**
-     * This functions runs on separate thread and receives user input, checks correct structure and appends it to linked
-     * list of userCommands which are to be executed. Linked list is thread safe in a way that you can append new
-     * commands to the finish and remove commands from the front.
+     * Receives user input, checks correct structure and appends it to linked list of userCommands which are to be
+     * executed.
      */
     void listen(void);
     /**
-     * Executes(show, save, exit commands) or forwards(buy, resume commands) user actions.
-     * @return true if user requests finish of game.
+     * Executes(manual, shop, back, save, exit) commands. Forwards(buy, upgrade commands) user actions to be processed
+     * by CMap.
+     * @return true if user requests exit or if game ends.
      */
     bool userAction(void);
     /**
      * Pauses the game, shows the shop(towers, units, upgrades) and saves the game.
      */
-    void showShop(void) const;
+    void showShop();
     /**
-     * Pauses the game, shows brief instructions, units and towers descriptions and saves the game.
+     * Pauses the game, shows instructions and saves the game.
      */
     void showManual() const;
+
+    void lose();
+
     int fill_width = 80;
     std::unique_ptr<CMap> map;
     std::list<std::string> userCommands;
-
-    void lose();
 };
-#endif //SEM_CGAME_H
+#endif //SEM_CGAME_HPP

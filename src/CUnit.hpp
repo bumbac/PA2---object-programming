@@ -2,15 +2,15 @@
 // Created by sutymate on 4/28/20.
 //
 
-#ifndef SEM_CUNIT_H
-#define SEM_CUNIT_H
+#ifndef SEM_CUNIT_HPP
+#define SEM_CUNIT_HPP
 
+#include <memory>
 #include <map>
-#include "CTile.h"
+#include "CTile.hpp"
+
 class CUnit: public CTile{
 public:
-    CUnit(const size_t &x, const size_t &y, char symbol, size_t steps, size_t reward, size_t currentHp);
-
     CUnit(const TCoordinate & coordinate, char symbol, size_t steps, size_t reward, size_t currentHp);
     /**
      * Unit tries to move as far as possible with limit of variable member steps. Unit can stay on one place.
@@ -24,13 +24,13 @@ public:
      * @return true if unit is killed
      */
     bool receiveAttack(const size_t & attack);
+
+    void save(std::ostream & middle_man) const override;
+
     /**
      * Used for Bombarda tower target selection
      * @return current_hp
      */
-
-    void save(std::ostream & middle_man) override;
-
     size_t getHealth() const;
 
     size_t getReward() const;
@@ -46,4 +46,4 @@ protected:
     size_t reward;
     size_t current_hp;
 };
-#endif //SEM_CUNIT_H
+#endif //SEM_CUNIT_HPP

@@ -83,55 +83,55 @@
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CApplication.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CApplication.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CApplication.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CGame.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CGame.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CGame.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CMap.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CMap.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CMap.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTile.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTile.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTile.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTower.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTower.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTower.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerArcher.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerArcher.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerArcher.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerBombarda.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CTowerCaesar.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.cpp">
 			<Option target="sem"/>
 		</Unit>
-		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.h">
+		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/CUnit.hpp">
 			<Option target="sem"/>
 		</Unit>
 		<Unit filename="/home/sutymate/Progtest/PA2/sem/src/main.cpp">

@@ -2,38 +2,22 @@
 // Created by sutymate on 4/28/20.
 //
 
-#ifndef SEM_CMAP_H
-#define SEM_CMAP_H
-#include <vector>
-#include <memory>
-#include <set>
-#include <map>
+#ifndef SEM_CMAP_HPP
+#define SEM_CMAP_HPP
 #include <list>
-#include <queue>
-#include <algorithm>
-#include <ostream>
+#include <vector>
+#include <map>
+#include <memory>
 #include <filesystem>
-#include "CTile.h"
-#include "CTower.h"
-#include "CUnit.h"
+#include "CTile.hpp"
+#include "CTower.hpp"
+#include "CUnit.hpp"
+
 /**
  * Game data structure.
  */
 struct TData{
-    /**
-     * Constructor for new game.
-     */
-    TData () = default;
-    /**
-     * Constructor for restoring game
-     * @param limit how many units can pass before losing the game
-     * @param enemies_in_wave counter, every timestep was one sequence of units movement, tower attack, user action resolution.
-     * @param units_killed enemy units killed
-     * @param units_escaped enemy units that reached finish point
-     * @param units_alive units alive on map
-     * @param money available, received for killing units
-     */
-
+    TData() = default;
     size_t m_limit;
     size_t m_money;
     size_t m_all_money;
@@ -43,11 +27,14 @@ struct TData{
     size_t m_wave_cooldown;
     size_t m_units_alive;
 };
-
+/**
+ * Wrapper structure used for path finding, both for BFS and Greedy algorithm.
+ */
 typedef struct Node{
     Node(std::shared_ptr<CTile> tile)
-            :tile(tile){}
+        : tile(tile){}
     std::shared_ptr<Node> parent = nullptr;
+    // 0 - FRESH, 1 - OPEN, 2 - CLOSED
     int flag = 0;
     size_t value = 0;
     std::shared_ptr<CTile> tile = nullptr;
@@ -59,8 +46,13 @@ inline bool operator<(const std::shared_ptr<Node> & first, const std::shared_ptr
 
 class CMap{
 public:
+    /**
+     *
+     * @param file_path represents map or save in maps/ or saves/ folder. File is checked for integrity before passing
+     * to this constructor
+     * @param is_new_game used in different file structure for new map and save
+     */
     CMap(const std::filesystem::path& file_path, bool is_new_game);
-
     /**
      * Move units in order from closest to finish point. Move only on predefined path.
      * @return true if enough units have passed to lose the game
@@ -79,16 +71,21 @@ public:
     /**
      * Clears windows and prints map with game data.
      */
-    void printMap(void) const;
+    void printMap(void);
     /**
-     * Parses and checks user command if action, names and position correspond to map.
+     * Parses and checks user command if action, names and position correspond to map. Does not check resources
+     * and position availability.
      * @param command for checking
      * @return true if command is valid and can be used
      */
     bool validUserAction(std::string & command);
-
+    /**
+     * Prints available towers, units and their specifications.
+     */
     void showShop()const;
-
+    /** Upgrades all towers of the same type - tower_symbol.
+     * @param tower_symbol
+     */
     void upgrade (char tower_symbol);
     /**
      * Puts all tiles in rows separated with std::endl to @param os. Does not put data and other data to @param os.
@@ -97,11 +94,21 @@ public:
      * @return
      */
     friend std::ostream &operator<<(std::ostream &os, const CMap &map);
-
-    const TData & winData ()const;
-
+    /**
+     * @return statistics of units killed, money collected...
+     */
+    const TData & gameEndData ()const;
+    /**
+     * Saves the state of the game to file in saves/ folder. Filename is current time.
+     * @return true if successful
+     * @throws runtime_exception if file cant be created
+     */
     bool saveGame()const;
-
+    /**
+     * @param x position
+     * @param y position
+     * @return manhattan distance - heuristic value for Greedy Algorithm
+     */
     size_t heuristic(const size_t & x, const size_t & y) const;
 private:
     /**
@@ -124,7 +131,14 @@ private:
      * All tiles which make path ordered from finish to start tile.
      */
     std::map<size_t, std::shared_ptr<CTile>> path;
+    /**
+     * Waves have different number of units in them. Waves are longer and upgrade ratio is higher. Last wave is
+     * infinite and upgrades units until overflow - overflow does not happen.
+     */
     std::list<int> waves {10, 10, 10, 15, 15, 15, 20, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+    /**
+     * Messages for user - info of units killed and unsuccessful command parsing, announcing new waves.
+     */
     std::list<std::string> messages;
     size_t height{};
     size_t width{};
@@ -146,13 +160,11 @@ private:
      */
     void makePath(bool useBFS, std::list<size_t> & unit_hp);
 
-    std::shared_ptr<Node> &
-    BFS(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::queue<std::shared_ptr<Node>> &visited,
-        std::shared_ptr<Node> &current_node) const;
+    void
+    BFS(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
 
-    std::shared_ptr<Node> &
-    A_star(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::queue<std::shared_ptr<Node>> &visited,
-        std::shared_ptr<Node> &current_node) const;
+    void
+    GreedySearch(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
 };
 
-#endif //SEM_CMAP_H
+#endif //SEM_CMAP_HPP

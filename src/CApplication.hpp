@@ -2,16 +2,12 @@
 // Created by sutymate on 4/28/20.
 //
 
-#ifndef SEM_CAPPLICATION_H
-#define SEM_CAPPLICATION_H
+#ifndef SEM_CAPPLICATION_HPP
+#define SEM_CAPPLICATION_HPP
 
-#include "CMap.h"
-#include "CGame.h"
-#include "CTile.h"
-#include <fstream>
-#include <iostream>
-#include <stdexcept>
-#include <filesystem>
+#include "CMap.hpp"
+#include "CGame.hpp"
+#include "CTile.hpp"
 
 /**
  * This class provides console interface for choosing map or save, and for showing instructions
@@ -56,15 +52,17 @@ private:
      */
     void exampleGame();
     /**
-     * At the moment of calling quitExit all resources are freed correctly and save is stored.
+     * File checks hash on the end of file. The hash is issued by author of the game. If hash does not correspond,
+     * file may be corrupted or changed without authors approval.
+     * @param file_name
+     * @return true if the file is verified and not changed
      */
-
-    bool checkFile(const std::filesystem::path & file_name) const;
+    [[nodiscard]] bool checkFile(const std::filesystem::path & file_name) const;
 
     std::filesystem::path map_name = "maps/map0.txt";
+    // standard terminal width. Some say that 120 is more suitable.
     int fill_width = 80;
     bool is_new_game = false;
-
 };
 
-#endif //SEM_CAPPLICATION_H
+#endif //SEM_CAPPLICATION_HPP
