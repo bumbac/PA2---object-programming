@@ -24,7 +24,12 @@ public:
      * @param price
      * @param upgrade_ratio increases the damage and range on upgrade, each upgrade increases ratio
      */
-    CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double upgrade_ratio, std::string & description);
+    CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price,
+           double upgrade_ratio, std::string description);
+    /** derived class from CTile
+     * member variable description(std::string) is not trivial, needs user-defined destructor
+     */
+    ~CTower() override;
     /**
      * Abstract function, every type of tower has special implementation.
      */

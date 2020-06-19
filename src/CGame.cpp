@@ -2,9 +2,11 @@
 // Created by sutymate on 4/29/20.
 //
 
+#include "CGame.hpp"
 #include <algorithm>
 #include <thread>
-#include "CGame.hpp"
+#include <fstream>
+#include <iostream>
 
 CGame::CGame(const std::filesystem::path &game_name, bool is_new_game, std::list<std::string> & user_commands)
         : map(std::make_unique<CMap>(CMap(game_name, is_new_game))), userCommands(user_commands){}
@@ -199,11 +201,11 @@ void CGame::lose() {
     std::cout << std::setw(fill_width)  << std::setfill(' ') << std::right << win_logo << std::endl;
     std::cout << request << std::endl;
     const TData & data = map->gameEndData();
-    std::cout << std::setw(fill_width/2) << "UNITS KILLED: " << data.m_units_killed << std::endl;
-    std::cout << std::setw(fill_width/2) << "UNITS ESCAPED: " << data.m_units_escaped << std::endl;
-    std::cout << std::setw(fill_width/2) << "UNITS ALIVE: " << data.m_units_alive << std::endl;
-    std::cout << std::setw(fill_width/2) << "GOLD EARNED: " << data.m_all_money << std::endl;
-    std::cout << std::setw(fill_width/2) << "UNUSED GOLD: " << data.m_money << std::endl;
+    std::cout << std::setw(fill_width/2) << "UNITS KILLED: " << data.units_killed << std::endl;
+    std::cout << std::setw(fill_width/2) << "UNITS ESCAPED: " << data.units_escaped << std::endl;
+    std::cout << std::setw(fill_width/2) << "UNITS ALIVE: " << data.units_alive << std::endl;
+    std::cout << std::setw(fill_width/2) << "GOLD EARNED: " << data.all_money << std::endl;
+    std::cout << std::setw(fill_width/2) << "UNUSED GOLD: " << data.money << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(3));
     // user can read stats, waiting for input
     std::getline(std::cin, win_logo);

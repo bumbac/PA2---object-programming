@@ -1,12 +1,15 @@
 //
 // Created by sutymate on 4/29/20.
 //
-#include <cmath>
 #include "CTower.hpp"
+#include <cmath>
 
-CTower::CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price, double upgrade_ratio, std::string & description)
-    : CTile(x, y, symbol), range(range), damage(damage), price(price), upgrade_ratio(upgrade_ratio), description(description) {}
+CTower::CTower(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price,
+        double upgrade_ratio, std::string description)
+    : CTile(x, y, symbol), range(range), damage(damage), price(price), upgrade_ratio(upgrade_ratio),
+    description(description) {}
 
+CTower::~CTower() {}
 
     // preventing unsigned overflow and crazy steep upgrading
 void CTower::upgrade(const char symbol) {
@@ -26,8 +29,8 @@ void CTower::upgrade(const char symbol) {
 }
 
 void CTower::save(std::ostream & middle_man)const {
-    middle_man << symbol << ' ' << std::to_string(range) << ' ' << std::to_string(damage) << ' ' << std::to_string(price)
-     << ' ' << std::to_string(upgrade_ratio) << std::endl << description;
+    middle_man << symbol << ' ' << std::to_string(range) << ' ' << std::to_string(damage) << ' '
+        << std::to_string(price) << ' ' << std::to_string(upgrade_ratio) << std::endl << description;
 }
 
 size_t CTower::getRange(void) const {

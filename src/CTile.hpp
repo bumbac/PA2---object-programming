@@ -27,8 +27,12 @@ public:
      * @param y representing height position
      * @param  symbol shown in game, walls represented by '|', '-', '+', path '.', start 'S', finish 'F'
      */
-    explicit CTile(const TCoordinate position, char symbol = ' ');
     CTile(const size_t x, const size_t y, char symbol = ' ');
+    explicit CTile(const TCoordinate position, char symbol = ' ');
+    /**
+     * base class is trivial, does not need user-defined destructor
+     */
+    virtual ~CTile() = default;
     /**
      * Functions used in unit movement and tower placing.
      * @return true if member variable symbol is free space

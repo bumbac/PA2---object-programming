@@ -5,9 +5,7 @@
 #ifndef SEM_CAPPLICATION_HPP
 #define SEM_CAPPLICATION_HPP
 
-#include "CMap.hpp"
-#include "CGame.hpp"
-#include "CTile.hpp"
+#include <filesystem>
 
 /**
  * This class provides console interface for choosing map or save, and for showing instructions

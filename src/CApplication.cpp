@@ -3,6 +3,10 @@
 //
 
 #include "CApplication.hpp"
+#include "CGame.hpp"
+#include <iostream>
+#include <vector>
+#include <fstream>
 
 void CApplication::start(void) {
     // loop operating the menu and user choices for menu
@@ -153,9 +157,9 @@ bool CApplication::checkFile(const std::filesystem::path &file_name) const {
     size_t length = file.tellg();
     // max size_t width, padding with leading zeros
     size_t hash_width = std::to_string((size_t) 0 - 1).length();
-    size_t hash_position = length - hash_width - 1;
-    if (hash_position < 0)
+    if ((length - 1) <= hash_width)
         return false;
+    size_t hash_position = length - hash_width - 1;
     file.seekg(hash_position);
     size_t file_hash = 0;
     file >> file_hash;

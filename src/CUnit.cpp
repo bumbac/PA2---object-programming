@@ -1,8 +1,8 @@
 //
 // Created by sutymate on 4/29/20.
 //
-#include <cmath>
 #include "CUnit.hpp"
+#include <cmath>
 
 CUnit::CUnit(const TCoordinate &coordinate, char symbol, size_t steps, size_t reward, size_t currentHp)
         : CTile(coordinate, symbol), steps(steps), reward(reward), current_hp(currentHp) {}

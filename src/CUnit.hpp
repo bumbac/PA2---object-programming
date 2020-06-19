@@ -5,9 +5,10 @@
 #ifndef SEM_CUNIT_HPP
 #define SEM_CUNIT_HPP
 
-#include <memory>
-#include <map>
 #include "CTile.hpp"
+#include <memory>
+#include <ostream>
+#include <map>
 
 class CUnit: public CTile{
 public:
@@ -18,7 +19,7 @@ public:
      * @param position
      * @return
      */
-    bool moveUnit(std::map<size_t, std::shared_ptr<CTile>> & path, size_t & position)const ;
+    bool moveUnit(std::map<size_t, std::shared_ptr<CTile>> & path, size_t & position) const;
     /**
      * @param attack to be received.
      * @return true if unit is killed
@@ -28,7 +29,7 @@ public:
     void save(std::ostream & middle_man) const override;
 
     /**
-     * Used for Bombarda tower target selection
+     * Used by Bombarda tower target selection
      * @return current_hp
      */
     size_t getHealth() const;

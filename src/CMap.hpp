@@ -5,6 +5,7 @@
 #ifndef SEM_CMAP_HPP
 #define SEM_CMAP_HPP
 #include <list>
+#include <iostream>
 #include <vector>
 #include <map>
 #include <memory>
@@ -18,14 +19,14 @@
  */
 struct TData{
     TData() = default;
-    size_t m_limit;
-    size_t m_money;
-    size_t m_all_money;
-    size_t m_units_killed;
-    size_t m_units_escaped;
-    size_t m_enemies_in_wave;
-    size_t m_wave_cooldown;
-    size_t m_units_alive;
+    size_t limit;
+    size_t money;
+    size_t all_money;
+    size_t units_killed;
+    size_t units_escaped;
+    size_t enemies_in_wave;
+    size_t wave_cooldown;
+    size_t units_alive;
 };
 /**
  * Wrapper structure used for path finding, both for BFS and Greedy algorithm.
@@ -53,6 +54,10 @@ public:
      * @param is_new_game used in different file structure for new map and save
      */
     CMap(const std::filesystem::path& file_path, bool is_new_game);
+    /**
+     * class is non trivial (std::string messages), needs user-defined destructor
+     */
+     ~CMap();
     /**
      * Move units in order from closest to finish point. Move only on predefined path.
      * @return true if enough units have passed to lose the game
@@ -104,13 +109,33 @@ public:
      * @throws runtime_exception if file cant be created
      */
     bool saveGame()const;
+
+private:
     /**
      * @param x position
      * @param y position
      * @return manhattan distance - heuristic value for Greedy Algorithm
      */
     size_t heuristic(const size_t & x, const size_t & y) const;
-private:
+    /**
+     * Checks if player is placing tower on path to finish.
+     * @param x
+     * @param y
+     * @return true if blocks path to finish
+     */
+    [[nodiscard]] bool blocksPath(size_t & x,size_t & y) const;
+
+    /**
+     * BFS or A star used for finding shortest path from start to finish.
+     * @param useBFS if true use BFS if false use A star.
+     */
+    void makePath(bool useBFS, std::list<size_t> & unit_hp);
+
+    void
+    BFS(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
+
+    void
+    greedySearch(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
     /**
      * In tiles are stored all elements of map(tiles, units, towers).
      */
@@ -142,29 +167,10 @@ private:
     std::list<std::string> messages;
     size_t height{};
     size_t width{};
-    bool use_BFS = false;
+    bool use_BFS;
     std::shared_ptr<CTile> start;
     std::shared_ptr<CTile> finish;
     TData data{};
-    /**
-     * Checks if player is placing tower on path to finish.
-     * @param x
-     * @param y
-     * @return true if blocks path to finish
-     */
-    [[nodiscard]] bool blocksPath(size_t & x,size_t & y) const;
-
-    /**
-     * BFS or A star used for finding shortest path from start to finish.
-     * @param useBFS if true use BFS if false use A star.
-     */
-    void makePath(bool useBFS, std::list<size_t> & unit_hp);
-
-    void
-    BFS(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
-
-    void
-    GreedySearch(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const;
 };
 
 #endif //SEM_CMAP_HPP

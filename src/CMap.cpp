@@ -2,14 +2,13 @@
 // Created by sutymate on 4/29/20.
 //
 
-#include <iostream>
-#include <fstream>
-#include <queue>
-#include <list>
 #include "CMap.hpp"
 #include "CTowerArcher.hpp"
 #include "CTowerBombarda.hpp"
 #include "CTowerCaesar.hpp"
+#include <sstream>
+#include <fstream>
+#include <queue>
 #define FRESH 0
 #define OPEN 1
 #define CLOSED 2
@@ -25,12 +24,12 @@ CMap::CMap(const std::filesystem::path& file_path, bool is_new_game){
     std::istringstream iss(line);
 
     // reading structure of map
-    iss >> width >> height >> data.m_limit >> data.m_money;
-    data.m_all_money = data.m_money;
+    iss >> width >> height >> data.limit >> data.money;
+    data.all_money = data.money;
     if (!is_new_game) {
-        iss >> data.m_all_money >> data.m_units_killed >> data.m_units_escaped >> data.m_enemies_in_wave
-            >> data.m_wave_cooldown;
-        size_t all_units = data.m_units_escaped + data.m_units_killed + data.m_units_alive;
+        iss >> data.all_money >> data.units_killed >> data.units_escaped >> data.enemies_in_wave
+            >> data.wave_cooldown;
+        size_t all_units = data.units_escaped + data.units_killed + data.units_alive;
         // waves counter setting
         while (all_units-- != 0) {
             waves.front()--;
@@ -76,8 +75,8 @@ CMap::CMap(const std::filesystem::path& file_path, bool is_new_game){
             all_towers[symbol] = std::shared_ptr<CTower>(new CTowerBombarda(0, 0, symbol, range, damage,
                     price, ratio, line));
         if(symbol == 'C')
-            all_towers[symbol] = std::shared_ptr<CTower>(new CTowerCaesar(0, 0, symbol, range, damage, price, ratio,
-                    line));
+            all_towers[symbol] = std::shared_ptr<CTower>(new CTowerCaesar(0, 0, symbol, range, damage, price,
+                    ratio, line));
     }
 
     // reading unit stats
@@ -122,7 +121,7 @@ CMap::CMap(const std::filesystem::path& file_path, bool is_new_game){
     makePath(use_BFS, unit_hp);
     units[path.size() + 1] = start_unit;
     units.erase(0);
-    data.m_units_alive = units.size() - 1;
+    data.units_alive = units.size() - 1;
 }
 
 void CMap::makePath(bool useBFS, std::list<size_t> & unit_hp) {
@@ -146,7 +145,7 @@ void CMap::makePath(bool useBFS, std::list<size_t> & unit_hp) {
         BFS(grid, last_node);
     else
         // Greedy space search uses priority queue
-        GreedySearch(grid, last_node);
+        greedySearch(grid, last_node);
 
     // this should never happen
     if (last_node->tile != finish) {
@@ -176,7 +175,8 @@ void CMap::makePath(bool useBFS, std::list<size_t> & unit_hp) {
     }
 }
 
-void CMap::GreedySearch(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node) const {
+void CMap::greedySearch(const std::vector<std::vector<std::shared_ptr<Node>>> &grid, std::shared_ptr<Node> &last_node)
+    const {
     // I chose greedy search because it provides more interesting paths than a_star
     std::priority_queue<std::shared_ptr<Node>> visited;
     visited.push(grid[start->getPosition().x][start->getPosition().y]);
@@ -276,8 +276,8 @@ bool CMap::moveUnits(void) {
             // blank tile for replacing
             std::shared_ptr<CTile> blank = std::make_shared<CTile>((unit.second->getPosition()),'.');
             if (path[position] == finish){
-                data.m_units_escaped++;
-                data.m_units_alive--;
+                data.units_escaped++;
+                data.units_alive--;
                 }
             else {
                 TCoordinate new_position = path[position]->getPosition();
@@ -298,27 +298,27 @@ bool CMap::moveUnits(void) {
             waves.pop_front();
         messages.emplace_back("NEW WAVE! Enemies are stronger by " + std::to_string(waves.front()) + "%.");
         units.rbegin()->second->upgrade(waves.front() / 100.0);
-        data.m_enemies_in_wave = waves.front();
-        data.m_wave_cooldown = 5;
+        data.enemies_in_wave = waves.front();
+        data.wave_cooldown = 5;
     }
     // preventing from playing long games, units get upgraded quite a lot after all enemy waves have been destroyed
     if (waves.size() == 1)
         units.rbegin()->second->upgrade(2.0);
 
-    if (data.m_wave_cooldown == 0) {
+    if (data.wave_cooldown == 0) {
         auto & spawn_tile = path.rbegin()->second;
         if (spawn_tile->canStep()) {
             auto new_unit = units.rbegin()->second->clone(spawn_tile->getPosition());
             spawn_tile = new_unit;
             units[path.size()] = new_unit;
             tiles[spawn_tile->getPosition().x][spawn_tile->getPosition().y] = new_unit;
-            data.m_units_alive++;
+            data.units_alive++;
             waves.front()--;
         }
     }
     else
-        data.m_wave_cooldown--;
-    return data.m_units_escaped >= data.m_limit;
+        data.wave_cooldown--;
+    return data.units_escaped >= data.limit;
 }
 
 void CMap::attackTowers(void) {
@@ -327,10 +327,10 @@ void CMap::attackTowers(void) {
         size_t dead_index = tower->attack(units);
         // returns position on path = dead_index
         if (dead_index != 0){
-            data.m_units_killed++;
-            data.m_units_alive--;
-            data.m_money += units[dead_index]->getReward();
-            data.m_all_money += units[dead_index]->getReward();
+            data.units_killed++;
+            data.units_alive--;
+            data.money += units[dead_index]->getReward();
+            data.all_money += units[dead_index]->getReward();
             messages.emplace_back( "Killed unit #: " + std::to_string(units[dead_index]->getPosition().x + 1) + " "
                        + std::to_string(units[dead_index]->getPosition().y + 1) + ", gold:"
                        + std::to_string(units[dead_index]->getReward()));
@@ -360,7 +360,7 @@ void CMap::placeTower(std::string & command) {
     auto tower = all_towers[symbol];
     size_t price = tower->getPrice();
 
-    if (price > data.m_money) {
+    if (price > data.money) {
         std::string tmp;
         tmp = "Not enough money to buy ";
         tmp += symbol;
@@ -379,7 +379,7 @@ void CMap::placeTower(std::string & command) {
         auto tmp  = tower->clone(x_pos, y_pos);
         tiles[x_pos][y_pos] = tmp;
         towers.push_back(tmp);
-        data.m_money -= tower->getPrice();
+        data.money -= tower->getPrice();
     }
     else
         messages.emplace_back("Can't place tower here.");
@@ -450,16 +450,16 @@ bool CMap::blocksPath(size_t &x, size_t &y) const {
 void CMap::printMap(void)  {
     std::cout << std::endl;
     if (waves.size() > 1)
-        std::cout << "   Enemies this wave: " << data.m_enemies_in_wave << std::endl;
+        std::cout << "   Enemies this wave: " << data.enemies_in_wave << std::endl;
     else
         std::cout << "   LAST INFINITE WAVE!!! Good luck. Every new enemy is stronger than before." << std::endl;
-    if (data.m_wave_cooldown)
-        std::cout << "   Enemies coming in: " << data.m_wave_cooldown << std::endl;
-    std::cout << "   Units killed: " << data.m_units_killed << std::endl;
-    std::cout << "   Units escaped: " << data.m_units_escaped << std::endl;
-    std::cout << "   Units so far: " << data.m_units_alive + data.m_units_escaped + data.m_units_killed << std::endl;
-    std::cout << "   Units limit: " << data.m_limit<< std::endl;
-    std::cout << "   Money: " << data.m_money << std::endl;
+    if (data.wave_cooldown)
+        std::cout << "   Enemies coming in: " << data.wave_cooldown << std::endl;
+    std::cout << "   Units killed: " << data.units_killed << std::endl;
+    std::cout << "   Units escaped: " << data.units_escaped << std::endl;
+    std::cout << "   Units so far: " << data.units_alive + data.units_escaped + data.units_killed << std::endl;
+    std::cout << "   Units limit: " << data.limit << std::endl;
+    std::cout << "   Money: " << data.money << std::endl;
     std::cout << *this;
     for(const auto & message : messages)
         std::cout << message << std::endl;
@@ -503,9 +503,15 @@ std::ostream &operator<<(std::ostream &os, const CMap &map) {
 }
 
 void CMap::upgrade(char tower_symbol) {
-    if (data.m_money >= 1000)
-        data.m_money -= 1000;
-    messages.emplace_back(&"UPGRADED TOWERS " [ tower_symbol]);
+    if (data.money >= 1000)
+        data.money -= 1000;
+    else {
+        messages.emplace_back("Not enough money to buy upgrade.");
+        return;
+    }
+    std::string message {"UPGRADED TOWERS "};
+    message += tower_symbol;
+    messages.emplace_back(message);
     tower_symbol = ::toupper(tower_symbol);
     all_towers[tower_symbol]->upgrade(tower_symbol);
     // if symbol matches tower symbol, tower gets upgraded. otherwise upgrade is ignored
@@ -516,9 +522,9 @@ void CMap::upgrade(char tower_symbol) {
 bool CMap::saveGame() const{
     std::cout << "SAVING GAME..." << std::endl;
     std::stringstream context;
-    context << width << ' ' << height << ' ' << data.m_limit << ' ' << data.m_money << ' ' << data.m_all_money << ' '
-    << data.m_units_killed << ' ' << data.m_units_escaped << ' ' << data.m_enemies_in_wave << ' '
-    << data.m_wave_cooldown;
+    context << width << ' ' << height << ' ' << data.limit << ' ' << data.money << ' ' << data.all_money << ' '
+            << data.units_killed << ' ' << data.units_escaped << ' ' << data.enemies_in_wave << ' '
+    << data.wave_cooldown;
     context << std::endl;
     for (size_t y = 0; y < height; y++) {
         for (size_t x = 0; x < width; x++)
@@ -560,7 +566,7 @@ bool CMap::saveGame() const{
 
 void CMap::showShop() const {
     int fill_width = 20;
-    std::cout << "MONEY AVAILABLE: " << data.m_money << std::endl;
+    std::cout << "MONEY AVAILABLE: " << data.money << std::endl;
     std::cout << "TOWERS:" << std::endl;
     std::cout << "SYMBOL" << std::setw(fill_width) << " |" << std::setw(fill_width) << "PRICE |"
     << std::setw(fill_width) << "DAMAGE |" << std::setw(fill_width) << "RANGE |" << std::setw(fill_width) <<  std::endl;
@@ -589,3 +595,4 @@ const TData &CMap::gameEndData() const{
     return data;
 }
 
+CMap::~CMap() {}

@@ -1,7 +1,6 @@
 //
 // Created by sutymate on 5/5/20.
 //
-
 #include <iostream>
 #include "CTowerCaesar.hpp"
 
@@ -10,6 +9,7 @@ CTowerCaesar::CTowerCaesar(const size_t &x, const size_t &y, char symbol, size_t
         : CTower(x, y, symbol, range, damage, price, ratio, description) {}
 
 size_t CTowerCaesar::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
+    // units is ordered map, first unit is closest to finish, last unit is cast for unit spawning
     for (auto & unit: units){
         // last units from finish is starting point, do not kill
         if (unit.first == units.rbegin()->first)

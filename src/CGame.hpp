@@ -5,16 +5,14 @@
 #ifndef SEM_CGAME_HPP
 #define SEM_CGAME_HPP
 
-#include <iostream>
-#include <locale>
 #include "CMap.hpp"
-#include <fstream>
 #include <filesystem>
-/**
- * Class operates actions outside of game itself (loading game, parsing user actions, saving, showing manual,
- * exiting game).
- */
+#include <list>
+#include <memory>
 
+/**
+ * Class operates actions (loading game, parsing user actions, saving, showing manual, exiting game).
+ */
 class CGame{
 public:
     /**
@@ -59,7 +57,7 @@ private:
     void showManual() const;
 
     void lose();
-
+    // width of view in menu, width of logos
     int fill_width = 80;
     std::unique_ptr<CMap> map;
     std::list<std::string> userCommands;

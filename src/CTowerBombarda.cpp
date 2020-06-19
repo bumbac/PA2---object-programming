@@ -1,13 +1,11 @@
 //
 // Created by sutymate on 5/5/20.
 //
-
 #include "CTowerBombarda.hpp"
-
 
 CTowerBombarda::CTowerBombarda(const size_t &x, const size_t &y, char symbol, size_t range, size_t damage, size_t price,
         double ratio, std::string description)
-        :CTower(x, y, symbol, range, damage, price, ratio, description) {}
+        : CTower(x, y, symbol, range, damage, price, ratio, description) {}
 
 size_t CTowerBombarda::attack(std::map<size_t, std::shared_ptr<CUnit>> &units) const {
     std::pair<size_t, std::shared_ptr<CUnit>> favorit(0, nullptr);
